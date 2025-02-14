@@ -3,8 +3,20 @@ package main
 import (
 	"testing"
 
+	"github.com/google/uuid"
 	"golang.org/x/crypto/bcrypt"
 )
+
+// TestCreateNewKey checks if createNewKey generates a valid UUID
+func TestCreateNewKey(t *testing.T) {
+	key := createNewKey()
+
+	// Ensure the UUID is valid
+	_, err := uuid.Parse(key)
+	if err != nil {
+		t.Errorf("Generated key is not a valid UUID: %s", key)
+	}
+}
 
 // TestHashKey checks if the hashKey function works correctly
 func TestHashKey(t *testing.T) {
