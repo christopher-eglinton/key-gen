@@ -16,7 +16,6 @@ func main() {
 	// generate new key if requested
 	if *newKey {
 		generatedKey := createNewKey()
-		fmt.Println("Generated Key:", generatedKey)
 		*key = generatedKey
 	} else if *key == "" {
 		fmt.Println("Error: Please provide a key or use the --new-key flag.")

@@ -1,4 +1,4 @@
-module easylearn/key_hasher
+module easylearn/keygen
 
 go 1.23.1
 
