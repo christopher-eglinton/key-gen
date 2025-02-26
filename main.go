@@ -15,7 +15,7 @@ func main() {
 
 	// generate new key if requested
 	if *newKey {
-		generatedKey := createNewKey()
+		generatedKey := uuid.New().String()
 		*key = generatedKey
 	} else if *key == "" {
 		fmt.Println("Error: Please provide a key or use the --new-key flag.")
@@ -30,10 +30,6 @@ func main() {
 	// print both the key and its hash
 	fmt.Println("Key:", *key)
 	fmt.Println("Hashed Key:", hashedKey)
-}
-
-func createNewKey() string {
-	return uuid.New().String()
 }
 
 func hashKey(apiKey string) (string, error) {
